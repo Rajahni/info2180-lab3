@@ -1,2 +1,1 @@
-let board = document.querySelectorAll("div").classList.add(".square")
-
+let square = document.querySelectorAll("board div").classList.add(".square")
