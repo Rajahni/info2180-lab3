@@ -87,17 +87,25 @@ function isWinner() {
             continue;
         }
         // if values in three matching squares line up. ie. All X's, All O's
-        else if (c0 == c1 && c1 == c2) {
+        if (c0 == c1 && c1 == c2) {
             if (c0 == "X"){
                 var status = document.getElementById("status");
                 status.classList.add("you-won");
                 status.textContent="Congratulations! X is the Winner!";
+                for (const square of board) {
+                    square.style.pointerEvents = "none";
+                }
+
                 break;
             }
             if (c0=="O"){
                 var status = document.getElementById("status");
                 status.classList.add("you-won");
                 status.textContent="Congratulations! O is the Winner!";
+                for (const square of board) {
+                    square.style.pointerEvents = "none";
+                }
+
                 break;
             }
         }
@@ -107,6 +115,10 @@ function isWinner() {
             var status = document.getElementById("status");
             status.classList.add("you-won");
             status.textContent="No Winner, There is a Tie. Play Again?";
+            for (const square of board) {
+                square.style.pointerEvents = "none";
+            }
+            
             break;
         } 
     }
